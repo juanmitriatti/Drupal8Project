@@ -41,17 +41,18 @@ function _module_hero_article_validate(&$form, $form_state) {
 
   //kint($form_state->getValue('title')[0]['value']);
   if (is_numeric($form_state->getValue('title')[0]['value'])) {
-    $form_state->setErrorByName('title','title should not be a number!');
+    $form_state->setErrorByName('title', 'title should not be a number!');
   }
 }
 
 /**
  * Implements hook_entity_presave
  */
-function module_hero_entity_presave(Drupal\Core\Entity\EntityInterface $entity){
-  if ($entity->bundle()=='product'){
+function module_hero_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->bundle() == 'product') {
     \Drupal::messenger()->addMessage(
-      'We are resaving our produce with name "'. $entity->get('title')->getValue()[0]['value'].'"'
+      'We are resaving our produce with name "' . $entity->get('title')
+        ->getValue()[0]['value'] . '"'
     );
   }
 }

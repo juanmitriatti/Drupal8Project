@@ -15,6 +15,7 @@ class HeroInitSubscriber implements EventSubscriberInterface {
   }
 
   public function onRequest($event) {
+    // The first Event when the request is being processed
     var_dump("Hello from our event");
   }
 

@@ -33,7 +33,6 @@ class HeroController extends ControllerBase {
   }
 
   public function heroList() {
-   // kint($this->currentUser);
 
     $heroes = [
       ['name' => 'HULK'],
